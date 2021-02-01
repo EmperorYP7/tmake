@@ -33,8 +33,7 @@ var rootCmd = &cobra.Command{
 	Short: "A CLI Tool for generating templates",
 	Long: `TMake is a Template Generator CLI which helps in making various 
 	templates which finds its use in competitive programming and many other
-	fields of Computer Science
-	`,
+	fields of Computer Science`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
