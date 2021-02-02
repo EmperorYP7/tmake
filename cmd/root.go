@@ -1,4 +1,5 @@
 /*
+Package cmd tmake
 Copyright © 2021 Yash Pandey yash.btech.cs19@iiitranchi.ac.in
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,14 +30,27 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "tmake",
-	Short: "A CLI Tool for generating templates",
-	Long: `TMake is a Template Generator CLI which helps in making various 
-	templates which finds its use in competitive programming and many other
-	fields of Computer Science`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	//	Run: func(cmd *cobra.Command, args []string) { },
+	Use:        "tmake",
+	Aliases:    []string{"tm"},
+	Short:      "A CLI Tool for generating templates",
+	Long:       `TMake is a Template Generator CLI which helps in making various templates which finds 
+its use in competitive programming and many other fields of Computer Science`,
+	Example:   "tmake --version",
+	ArgAliases:             []string{},
+	BashCompletionFunction: "",
+	Deprecated:             "",
+	Hidden:                 false,
+	Annotations:            map[string]string{},
+	Version:                "v1.0",
+	SilenceErrors:              false,
+	SilenceUsage:               false,
+	DisableFlagParsing:         false,
+	DisableAutoGenTag:          false,
+	DisableFlagsInUseLine:      false,
+	DisableSuggestions:         false,
+	SuggestionsMinimumDistance: 0,
+	TraverseChildren:           false,
+	FParseErrWhitelist:         cobra.FParseErrWhitelist{},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

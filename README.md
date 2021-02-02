@@ -1,6 +1,7 @@
 # TMake - Template Generator CLI
 
 ![Go Tests](https://github.com/EmperorYP7/tmake/workflows/Tests/badge.svg)
+![GoLint](https://github.com/EmperorYP7/tmake/workflows/GoLint/badge.svg)
 
 ![TMake Snapshot](./resources/snapshot.png "Current state of TMake")
 
