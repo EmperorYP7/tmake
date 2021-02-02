@@ -1,2 +1,4 @@
 tmake
 .vscode
+main
+.DS_Store

@@ -24,16 +24,34 @@ import (
 
 // remoteCmd represents the remote command
 var remoteCmd = &cobra.Command{
-	Use:   "remote",
-	Short: "Shows the list of all remote templates",
+	Use:        "remote",
+	Aliases:    []string{"rmt"},
+	SuggestFor: []string{},
+	Short:      "Shows the list of all remote templates",
 	Long: `
 The command is associated with all the tasks related to generation, deletion,
 editing and copying of templates from remote sources. By default it shows
 the list of all remote templates.
 `,
+	Example:   "",
+	ValidArgs: []string{},
+	ArgAliases:             []string{},
+	BashCompletionFunction: "",
+	Deprecated:             "",
+	Hidden:                 false,
+	Annotations:            map[string]string{},
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("remote called")
 	},
+	SilenceErrors:              false,
+	SilenceUsage:               false,
+	DisableFlagParsing:         false,
+	DisableAutoGenTag:          false,
+	DisableFlagsInUseLine:      false,
+	DisableSuggestions:         false,
+	SuggestionsMinimumDistance: 0,
+	TraverseChildren:           false,
+	FParseErrWhitelist:         cobra.FParseErrWhitelist{},
 }
 
 func init() {

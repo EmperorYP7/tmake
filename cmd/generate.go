@@ -24,15 +24,36 @@ import (
 
 // generateCmd represents the generate command
 var generateCmd = &cobra.Command{
-	Use:   "generate",
-	Short: "This command lets you generate templates",
+	Use:        "generate",
+	Aliases:    []string{},
+	SuggestFor: []string{},
+	Short:      "Lets you generate templates",
 	Long: `
 The command lets you generate templates based on remote or local
 sources if they're valid otherwise, will throw an error.
 `,
+	Example:   "tmake generate [sub-commands] -flags=value",
+	ValidArgs: []string{},
+	// Args: func(cmd *cobra.Command, args []string) error {
+	// },
+	ArgAliases:             []string{},
+	BashCompletionFunction: "",
+	Deprecated:             "",
+	Hidden:                 false,
+	Annotations:            map[string]string{},
+	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("generate called")
 	},
+	SilenceErrors:              false,
+	SilenceUsage:               false,
+	DisableFlagParsing:         false,
+	DisableAutoGenTag:          false,
+	DisableFlagsInUseLine:      false,
+	DisableSuggestions:         false,
+	SuggestionsMinimumDistance: 0,
+	TraverseChildren:           false,
+	FParseErrWhitelist:         cobra.FParseErrWhitelist{},
 }
 
 func init() {
