@@ -1,5 +1,5 @@
 /*
-Package cmd :
+Package cmd tmake
 Copyright © 2021 Yash Pandey yash.btech.cs19@iiitranchi.ac.in
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,7 +33,7 @@ var rootCmd = &cobra.Command{
 	Use:        "tmake",
 	Aliases:    []string{"tm"},
 	Short:      "A CLI Tool for generating templates",
-	Long: `TMake is a Template Generator CLI which helps in making various templates which finds 
+	Long:       `TMake is a Template Generator CLI which helps in making various templates which finds 
 its use in competitive programming and many other fields of Computer Science`,
 	Example:   "tmake --version",
 	ArgAliases:             []string{},
