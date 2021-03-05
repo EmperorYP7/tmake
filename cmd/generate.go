@@ -24,26 +24,29 @@ import (
 
 // generateCmd represents the generate command
 var generateCmd = &cobra.Command{
-	Use:        "generate",
-	Aliases:    []string{},
-	SuggestFor: []string{},
+	Use:        "generate [-d Destination] [args]",
+	Aliases:    []string{"gen"},
+	SuggestFor: []string{"genrate", "make", "create"},
 	Short:      "Lets you generate templates",
 	Long: `
 The command lets you generate templates based on remote or local
 sources if they're valid otherwise, will throw an error.
 `,
-	Example:   "tmake generate [sub-commands] -flags=value",
-	ValidArgs: []string{},
-	// Args: func(cmd *cobra.Command, args []string) error {
-	// },
+	Example:   "tmake generate 5 templatename1 ./CodeForces-697",
+	Args: cobra.MinimumNArgs(2),
 	ArgAliases:             []string{},
-	BashCompletionFunction: "",
+	BashCompletionFunction: "generate",
 	Deprecated:             "",
 	Hidden:                 false,
 	Annotations:            map[string]string{},
 	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("generate called")
+		err := Copy(args[1], args[2])
+		if err != nil {
+			fmt.Printf("Error")
+			return
+		}
+		fmt.Println("Created", args[0], "files")
 	},
 	SilenceErrors:              false,
 	SilenceUsage:               false,
@@ -67,5 +70,4 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// generateCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
