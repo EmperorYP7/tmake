@@ -24,7 +24,7 @@ jobs:
         run: go test -race ./...
 
       - name: Build
-        run: go build -v ./...
+        run: go build
 
   build-minimum:
     runs-on: ubuntu-latest
@@ -41,4 +41,4 @@ jobs:
       - name: Build
         env:
           CGO_ENABLED: '0'
-        run: go build -v ./...
+        run: go build

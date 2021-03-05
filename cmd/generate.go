@@ -17,7 +17,6 @@ limitations under the License.
 package cmd
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -25,7 +24,7 @@ import (
 
 // generateCmd represents the generate command
 var generateCmd = &cobra.Command{
-	Use:        "generate",
+	Use:        "generate [-d Destination] [args]",
 	Aliases:    []string{"gen"},
 	SuggestFor: []string{"genrate", "make", "create"},
 	Short:      "Lets you generate templates",
@@ -33,22 +32,17 @@ var generateCmd = &cobra.Command{
 The command lets you generate templates based on remote or local
 sources if they're valid otherwise, will throw an error.
 `,
-	Example:   "tmake generate [arguments] -flags=value",
-	Args: func(cmd *cobra.Command, args []string) error {
-		if len(args) < 2 {
-			return errors.New("requires at least two arguments")
-		}
-		return nil
-	},
+	Example:   "tmake generate 5 templatename1 ./CodeForces-697",
+	Args: cobra.MinimumNArgs(2),
 	ArgAliases:             []string{},
-	BashCompletionFunction: "",
+	BashCompletionFunction: "generate",
 	Deprecated:             "",
 	Hidden:                 false,
 	Annotations:            map[string]string{},
 	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("running generate command")
-		fmt.Println(cmd.Flags().GetString("dest"))
+		Copy(args[1], args[2])
+		fmt.Println("Created", args[0], "files")
 	},
 	SilenceErrors:              false,
 	SilenceUsage:               false,
@@ -72,6 +66,4 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	var destination = ""
-	generateCmd.Flags().StringVarP(&destination ,"dest", "d", "", "Destination of generated templates")
 }
