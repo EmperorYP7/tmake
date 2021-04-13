@@ -3,6 +3,11 @@
 ![Go Tests](https://github.com/EmperorYP7/tmake/workflows/Tests/badge.svg)
 ![GoLint](https://github.com/EmperorYP7/tmake/workflows/GoLint/badge.svg)
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE.md)
+
+
+![TMake Logo](./resources/logo.png "logo")
+
 ![TMake Snapshot](./resources/snapshot.png "Current state of TMake")
 
 `TMake` is still work under progress. The aim of this project is to make a functional 

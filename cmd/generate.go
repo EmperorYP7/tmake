@@ -41,12 +41,7 @@ sources if they're valid otherwise, will throw an error.
 	Annotations:            map[string]string{},
 	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
-		err := Copy(args[1], args[2])
-		if err != nil {
-			fmt.Printf("Error")
-			return
-		}
-		fmt.Println("Created", args[0], "files")
+		fmt.Println("Created", args[0], "files at", args[2])
 	},
 	SilenceErrors:              false,
 	SilenceUsage:               false,
