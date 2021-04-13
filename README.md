@@ -3,12 +3,10 @@
 ![Go Tests](https://github.com/EmperorYP7/tmake/workflows/Tests/badge.svg)
 ![GoLint](https://github.com/EmperorYP7/tmake/workflows/GoLint/badge.svg)
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE.md)
-
+[![Software License](https://img.shields.io/github/license/EmperorYP7/tmake?style=for-the-badge&logo=appveyor)](/LICENSE.md)
+![Stars](https://img.shields.io/github/stars/EmperorYP7/tmake?style=for-the-badge&logo=appveyor)
 
 ![TMake Logo](./resources/logo.png "logo")
-
-![TMake Snapshot](./resources/snapshot.png "Current state of TMake")
 
 `TMake` is still work under progress. The aim of this project is to make a functional 
 and easy to use CLI for making templates with a single command. What templates you ask? 
@@ -17,6 +15,8 @@ about a competition when we're just minutes away from commencing.
 
 To tackle this seemingly minute yet huge issue, I came up with an idea of making a CLI to help
 competitive coders to get ready in a single command.
+
+![TMake Snapshot](./resources/snapshot.png "Current state of TMake")
 
 ## Getting started
 
