@@ -42,6 +42,10 @@ sources if they're valid otherwise, will throw an error.
 	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Created", args[0], "files at", args[2])
+<<<<<<< HEAD
+=======
+		fmt.Println("Open it here..")
+>>>>>>> c0d02e553b9a2467996eb43fc5eb81b1d797f7af
 	},
 	SilenceErrors:              false,
 	SilenceUsage:               false,

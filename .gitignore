@@ -3,3 +3,4 @@ tmake
 main
 .DS_Store
 .idea
+dist/
