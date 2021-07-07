@@ -41,7 +41,7 @@ the list of all remote templates.
 	Hidden:                 false,
 	Annotations:            map[string]string{},
 	Run: func(cmd *cobra.Command, args []string) {
-		fileTextLines, err := ReadRemote("./store/remote.csv")
+		fileTextLines, err := ReadRemoteFile("./store/remote.csv")
 		if err != nil {
 			fmt.Print(err)
 		}
