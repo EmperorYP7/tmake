@@ -23,7 +23,7 @@ import (
 	"os"
 )
 
-// Copy : copying a file src to dst
+// Copy: copying a file from src to dst
 func Copy(src, dst string) error {
     in, err := os.Open(src)
     if err != nil {
@@ -71,9 +71,7 @@ func GetRemoteNames(src string) ([]string, error) {
     }
     var remoteNames []string
 
-    for _, eachline := range fileTextLines {
-        remoteNames = append(remoteNames, eachline)
-    }
+    remoteNames = append(remoteNames, fileTextLines...)
 
     return remoteNames, nil
 }
