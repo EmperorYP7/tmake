@@ -1,6 +1,6 @@
 /*
 Package cmd tmake
-Copyright © 2021 NAME HERE <EMAIL ADDRESS>
+Copyright © 2021 Yash Pandey <yash.btech.cs19@iiitranchi.ac.in>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -41,7 +41,13 @@ the list of all remote templates.
 	Hidden:                 false,
 	Annotations:            map[string]string{},
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("remote called")
+		fileTextLines, err := ReadRemoteFile("./store/remote.csv")
+		if err != nil {
+			fmt.Print(err)
+		}
+		for _, eachline := range fileTextLines {
+			fmt.Println(eachline)
+		}
 	},
 	SilenceErrors:              false,
 	SilenceUsage:               false,

@@ -42,6 +42,7 @@ sources if they're valid otherwise, will throw an error.
 	Version:                "",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Created", args[0], "files at", args[2])
+        Copy(args[1], args[2])
 		fmt.Println("Open it here..")
 	},
 	SilenceErrors:              false,
@@ -56,14 +57,14 @@ sources if they're valid otherwise, will throw an error.
 }
 
 func init() {
-	rootCmd.AddCommand(generateCmd)
+    rootCmd.AddCommand(generateCmd)
 
-	// Here you will define your flags and configuration settings.
+    // Here you will define your flags and configuration settings.
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// generateCmd.PersistentFlags().String("foo", "", "A help for foo")
+    // Cobra supports Persistent Flags which will work for this command
+    // and all subcommands, e.g.:
+    // generateCmd.PersistentFlags().String("foo", "", "A help for foo")
 
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
+    // Cobra supports local flags which will only run when this command
+    // is called directly, e.g.:
 }

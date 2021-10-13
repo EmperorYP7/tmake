@@ -17,11 +17,13 @@ limitations under the License.
 package cmd
 
 import (
+	"bufio"
 	"io"
+	"log"
 	"os"
 )
 
-// Copy : copying a file src to dst
+// Copy: copying a file from src to dst
 func Copy(src, dst string) error {
     in, err := os.Open(src)
     if err != nil {
@@ -40,4 +42,36 @@ func Copy(src, dst string) error {
         return err
     }
     return out.Close()
+}
+
+func ReadRemoteFile(src string) ([]string, error) {
+    readFile, err := os.Open(src)
+ 
+    if err != nil {
+        log.Fatalf("failed to open file: %s", err)
+        return nil, err
+    }
+ 
+    fileScanner := bufio.NewScanner(readFile)
+    fileScanner.Split(bufio.ScanLines)
+    var fileTextLines []string
+ 
+    for fileScanner.Scan() {
+        fileTextLines = append(fileTextLines, fileScanner.Text())
+    }
+ 
+    readFile.Close()
+    return fileTextLines, nil
+}
+
+func GetRemoteNames(src string) ([]string, error) {
+    fileTextLines, err := ReadRemoteFile(src)
+    if err != nil {
+        return nil, err
+    }
+    var remoteNames []string
+
+    remoteNames = append(remoteNames, fileTextLines...)
+
+    return remoteNames, nil
 }

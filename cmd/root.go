@@ -35,7 +35,7 @@ var rootCmd = &cobra.Command{
 	Short:      "A CLI Tool for generating templates",
 	Long:       `TMake is a Template Generator CLI which helps in making various templates which finds 
 its use in competitive programming and many other fields of Computer Science`,
-	Example:   "tmake --version",
+	Example:   "tmake remote add templatename1 <GIST_LINK>\ntmake generate 3 templatename1 ./path/to/destination-folder",
 	ArgAliases:             []string{},
 	BashCompletionFunction: "",
 	Deprecated:             "",
